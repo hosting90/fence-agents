@@ -118,7 +118,7 @@ def main():
 	docs["shortdesc"] = "Fence agent for Hosting90 API"
 	docs["longdesc"] = "fence_h90_api is an I/O Fencing agent \
 which can be used with the virtual machines managed by Hosting90 \
-Name of virtual machine (-n / port) is vserver_id, vserver_<id> or vserver name."
+Name of virtual machine (-n / port) is vserver_id, vserver name."
 	docs["vendorurl"] = "http://www.hosting90.cz"
 	show_docs(options, docs)
 
