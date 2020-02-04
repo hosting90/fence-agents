@@ -44,7 +44,13 @@ class HostingApi(object):
 			return ret['reply']
 		else:
 			raise Exception((ret['reply']['status']['code'], ret['reply']['status']['text']))
-		
+	
+	def logout(self):
+		self.fn = 'logout'
+		ret = self.__call__(sid=self.sid)
+		self.sid = None
+		return ret
+	
 	def login(self,uid,password):
 		self.fn = 'login'
 		self.sid = None
@@ -140,6 +146,7 @@ Name of virtual machine (-n / port) is vserver_id, vserver name."
 	## Fence operations
 	####
 	result = fence_action(conn, options, set_power_status, get_power_status, get_outlets,reboot_cycle)
+	conn.logout()
 	sys.exit(result)
 
 if __name__ == "__main__":
